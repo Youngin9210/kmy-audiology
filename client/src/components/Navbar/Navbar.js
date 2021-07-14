@@ -6,13 +6,13 @@ import styles from './Navbar.module.css';
 export default function Navbar({ toggle, navLinks }) {
 	return (
 		<nav
-			className={` flex justify-between items-center h-16 relative shadow-sm bg-white beltoneBlue`}
+			className="sticky top-0 z-50 flex justify-between items-center h-16 relative shadow-sm bg-white beltoneBlue"
 			role="navigation"
 		>
 			<Link className={`pl-8 ${styles.logo}`} to="/">
 				<img
 					src={logo}
-					alt="Beltone"
+					alt="Beltone Logo"
 					// className={styles.logo}
 					// onClick={(e) => handleLogoClick(e)}
 				/>
@@ -35,7 +35,7 @@ export default function Navbar({ toggle, navLinks }) {
 			</div>
 			<div className="pr-8 md:block hidden">
 				{navLinks.map((link) => (
-					<Link className="p-3" to={link.path}>
+					<Link className="p-3" to={link.path} key={link.name}>
 						{link.name}
 					</Link>
 				))}

@@ -6,13 +6,13 @@ const Dropdown = ({ navLinks, isOpen, toggle }) => {
 		<div
 			className={
 				isOpen
-					? ` grid grid-rows-4 text-center items-center bg-white beltoneBlue`
+					? `sticky top-16 z-50 grid grid-rows-4 text-center items-center bg-white beltoneBlue`
 					: 'hidden'
 			}
 			onClick={toggle}
 		>
 			{navLinks.map((link) => (
-				<Link className="p-3" to={link.path}>
+				<Link className="p-3" to={link.path} key={link.name}>
 					{link.name}
 				</Link>
 			))}
