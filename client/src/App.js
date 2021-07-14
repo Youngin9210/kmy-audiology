@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Footer from './components/Footer/Footer';
+import Footer from './components/Footer';
 import Dropdown from './components/Navbar/Dropdown';
 import Navbar from './components/Navbar/Navbar';
 import About from './pages/About';
@@ -28,7 +28,7 @@ function App() {
 		<Router>
 			<Navbar toggle={toggle} navLinks={navLinks} />
 			<Dropdown isOpen={isOpen} toggle={toggle} navLinks={navLinks} />
-			<div className="container text-white">
+			<div className="text-white">
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route exact path="/about" component={About} />
