@@ -1,95 +1,44 @@
-import { makeStyles } from '@material-ui/core/styles';
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/log-negative-white.png';
+import logo from '../../assets/Beltone_Logo_Web.png';
 import styles from './Navbar.module.css';
 
-const useStyles = makeStyles((theme) => ({
-	root: {
-		flexGrow: 1,
-	},
-	appBar: {
-		backgroundColor: 'rgb(0, 86, 148)',
-	},
-	toolBar: {
-		// display: "flex",
-		// justifyContent: "space-between",
-	},
-	menuButton: {
-		display: 'none',
-		marginRight: theme.spacing(2),
-		[theme.breakpoints.down('sm')]: {
-			display: 'block',
-		},
-	},
-	logo: {
-		'&:hover': {
-			cursor: 'pointer',
-		},
-		width: '15%',
-		marginRight: 'auto',
-		marginLeft: theme.spacing(2),
-		margin: '1.25em 0',
-		[theme.breakpoints.down('sm')]: {
-			width: '25%',
-		},
-		[theme.breakpoints.down('xs')]: {
-			width: '40%',
-		},
-	},
-}));
-
-export default function Navbar() {
-	const classes = useStyles();
-	const preventDefault = (event) => event.preventDefault();
-	const [navLinks, setNavLinks] = useState([{}]);
-
-	const handleLogoClick = (e) => {
-		e.preventDefault();
-		window.location.pathname = '/';
-		console.log(window.location.pathname);
-	};
-
+export default function Navbar({ toggle, navLinks }) {
 	return (
-		<nav className={`navbar navbar-expand-lg  ${styles.navBg}`}>
-			<div className="container-fluid">
+		<nav
+			className={` flex justify-between items-center h-16 relative shadow-sm bg-white beltoneBlue`}
+			role="navigation"
+		>
+			<Link className={`pl-8 ${styles.logo}`} to="/">
 				<img
-					alt="logo"
-					className={styles.logo}
 					src={logo}
-					onClick={(e) => handleLogoClick(e)}
+					alt="Beltone"
+					// className={styles.logo}
+					// onClick={(e) => handleLogoClick(e)}
 				/>
-				<button className="navbar-toggler">
-					<span className="navbar-toggler-icon"></span>
-				</button>
-				<div
-					className={`collapse navbar-collapse ${styles.navItemList}`}
-					id="beltoneNav"
+			</Link>
+			<div className="px-4 cursor-pointer md:hidden" onClick={toggle}>
+				<svg
+					className="w-6 h-6"
+					fill="none"
+					stroke="currentColor"
+					viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg"
 				>
-					<ul className={`navbar-nav mb-2 mb-lg-0`}>
-						<li className="nav-item">
-							<Link to="/about" className={`nav-link ${styles.navLinks}`}>
-								About Us
-							</Link>
-						</li>
-						<li className="nav-item">
-							<Link to="/products" className={`nav-link ${styles.navLinks}`}>
-								Products
-							</Link>
-						</li>
-						<li className="nav-item">
-							<Link to="/blog" className={`nav-link ${styles.navLinks}`}>
-								{' '}
-								Blog
-							</Link>
-						</li>
-						<li className="nav-item">
-							<Link to="/contact" className={`nav-link ${styles.navLinks}`}>
-								Contact Us
-							</Link>
-						</li>
-					</ul>
-				</div>
+					<path
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						strokeWidth={2}
+						d="M4 6h16M4 12h16M4 18h16"
+					/>
+				</svg>
+			</div>
+			<div className="pr-8 md:block hidden">
+				{navLinks.map((link) => (
+					<Link className="p-3" to={link.path}>
+						{link.name}
+					</Link>
+				))}
 			</div>
 		</nav>
 	);
