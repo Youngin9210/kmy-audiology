@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Footer() {
+const Footer = () => {
 	return (
 		<div className="flex flex-wrap lg:flex-nowrap justify-center items-center h-auto bg-white beltoneBlue">
 			<p className="p-2">Copyright © 2021 KMY Audiology</p>
@@ -10,4 +10,6 @@ export default function Footer() {
 			{/* TODO: Add social media icon for facebook pages */}
 		</div>
 	);
-}
+};
+
+export default Footer;

@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Dropdown from './components/Navbar/Dropdown';
 import Navbar from './components/Navbar/Navbar';
 import About from './pages/About';
+import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
 import Products from './pages/Products';
@@ -33,6 +34,7 @@ function App() {
 					<Route exact path="/" component={Home} />
 					<Route exact path="/about" component={About} />
 					<Route exact path="/products" component={Products} />
+					<Route exact path="/blog" component={Blog} />
 					<Route exact path="/contact" component={Contact} />
 				</Switch>
 			</div>
