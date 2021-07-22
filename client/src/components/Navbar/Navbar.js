@@ -6,7 +6,7 @@ import styles from './Navbar.module.css';
 export default function Navbar({ toggle, navLinks }) {
 	return (
 		<nav
-			className="sticky top-0 z-50 flex justify-between items-center h-16 relative shadow-sm bg-white beltoneBlue"
+			className="sticky xl:px-44 lg:px-32 top-0 z-50 flex justify-between items-center h-16 relative shadow-sm bg-white beltoneBlue"
 			role="navigation"
 		>
 			<Link className={`pl-8 ${styles.logo}`} to="/">
