@@ -27,18 +27,20 @@ function App() {
 
 	return (
 		<Router>
-			<Navbar toggle={toggle} navLinks={navLinks} />
-			<Dropdown isOpen={isOpen} toggle={toggle} navLinks={navLinks} />
-			<div className="text-white">
-				<Switch>
-					<Route exact path="/" component={Home} />
-					<Route exact path="/about" component={About} />
-					<Route exact path="/products" component={Products} />
-					<Route exact path="/blog" component={Blog} />
-					<Route exact path="/contact" component={Contact} />
-				</Switch>
+			<div className="h-full">
+				<Navbar toggle={toggle} navLinks={navLinks} />
+				<Dropdown isOpen={isOpen} toggle={toggle} navLinks={navLinks} />
+				<div className="text-white h-screen">
+					<Switch>
+						<Route exact path="/" component={Home} />
+						<Route exact path="/about" component={About} />
+						<Route exact path="/products" component={Products} />
+						<Route exact path="/blog" component={Blog} />
+						<Route exact path="/contact" component={Contact} />
+					</Switch>
+				</div>
+				<Footer />
 			</div>
-			<Footer />
 		</Router>
 	);
 }
