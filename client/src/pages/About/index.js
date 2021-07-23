@@ -31,7 +31,7 @@ const About = () => {
 			<div className="p-10">
 				<section className="container mx-auto flex flex-wrap justify-center items-start my-16 beltoneBlue">
 					<div className="lg:w-3/4 w-full lg:pr-3">
-						<div className="bg-white rounded-xl p-6">
+						<div className="bg-white bg-opacity-75 rounded-xl p-6">
 							<img
 								src={urlFor(author.authorImage).url()}
 								alt="Dr. Young"
