@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 import Dropdown from './components/Navbar/Dropdown';
 import Navbar from './components/Navbar/Navbar';
+import SingleBlog from './components/SingleBlog';
 import About from './pages/About';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
@@ -36,10 +37,11 @@ function App() {
 						<Route exact path="/about" component={About} />
 						<Route exact path="/products" component={Products} />
 						<Route exact path="/blog" component={Blog} />
+						<Route exact path="/blog/:slug" component={SingleBlog} />
 						<Route exact path="/contact" component={Contact} />
 					</Switch>
 				</div>
-				<Footer />
+				{/* <Footer /> */}
 			</div>
 		</Router>
 	);
