@@ -26,31 +26,29 @@ const About = () => {
 
 	if (!author) return <div>Loading...</div>;
 	return (
-		<main className="container mx-auto text-center m-10">
-			<h1 className="text-6xl my-4">About Us</h1>
-			<div className="p-10">
-				<section className="container mx-auto flex flex-wrap justify-center items-start my-16 beltoneBlue">
-					<div className="lg:w-3/4 w-full lg:pr-3">
-						<div className="bg-white bg-opacity-75 rounded-xl p-6">
-							<img
-								src={urlFor(author.authorImage).url()}
-								alt="Dr. Young"
-								className="rounded lg:w-5/6 mx-auto"
-							/>
-							<div className="text-lg flex flex-col justify-center container mx-auto">
-								<h1 className="text-3xl font-bold m-4">{author.name}</h1>
-								<div className="prose lg:prose-xl leading-relaxed">
-									<BlockContent
-										blocks={author.bio}
-										projectId="t3iwym3s"
-										dataset="production"
-									/>
-								</div>
+		<main className="container mx-auto text-center m-10 text-beltoneBlue-500">
+			<h1 className="text-6xl">Meet Our Team!</h1>
+			<section className="container mx-auto flex flex-wrap justify-center items-start my-8">
+				<div className="lg:w-3/4 w-full lg:pr-3">
+					<div className="bg-white bg-opacity-75 rounded-xl p-6">
+						<img
+							src={urlFor(author.authorImage).url()}
+							alt="Dr. Young"
+							className="rounded lg:w-5/6 mx-auto"
+						/>
+						<div className="text-lg flex flex-col justify-center container mx-auto">
+							<h1 className="text-3xl font-bold m-4">{author.name}</h1>
+							<div className="prose lg:prose-xl leading-relaxed">
+								<BlockContent
+									blocks={author.bio}
+									projectId="t3iwym3s"
+									dataset="production"
+								/>
 							</div>
 						</div>
 					</div>
-				</section>
-			</div>
+				</div>
+			</section>
 		</main>
 	);
 };
