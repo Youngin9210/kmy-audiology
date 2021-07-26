@@ -1,3 +1,4 @@
+/* eslint-disable no-dupe-keys */
 /* eslint-disable import/no-anonymous-default-export */
 export default {
 	name: 'post',
@@ -16,6 +17,8 @@ export default {
 			options: {
 				source: 'title',
 				maxLength: 96,
+				source: 'title',
+				auto: true,
 			},
 		},
 		{
