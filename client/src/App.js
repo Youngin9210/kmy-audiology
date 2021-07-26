@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-// import Footer from './components/Footer';
+import Footer from './components/Footer';
 import Dropdown from './components/Navbar/Dropdown';
 import Navbar from './components/Navbar/Navbar';
 import SingleBlog from './components/SingleBlog';
@@ -13,11 +13,11 @@ import Products from './pages/Products';
 
 function App() {
 	const [navLinks] = useState([
-		{ name: 'Home', path: '/' },
 		{ name: 'About  Us', path: '/about' },
 		{ name: 'Products', path: '/products' },
 		{ name: 'Blog', path: '/blog' },
 		{ name: 'Contact Us', path: '/contact' },
+		{ name: 'Schedule Appointment!', path: '/schedule' },
 	]);
 
 	const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +31,7 @@ function App() {
 			<div className="h-full">
 				<Navbar toggle={toggle} navLinks={navLinks} />
 				<Dropdown isOpen={isOpen} toggle={toggle} navLinks={navLinks} />
-				<div className="text-white h-screen">
+				<div className="text-white min-h-screen">
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route exact path="/about" component={About} />
@@ -41,7 +41,7 @@ function App() {
 						<Route exact path="/contact" component={Contact} />
 					</Switch>
 				</div>
-				{/* <Footer /> */}
+				<Footer />
 			</div>
 		</Router>
 	);
