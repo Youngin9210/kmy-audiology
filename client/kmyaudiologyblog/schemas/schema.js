@@ -6,6 +6,7 @@ import author from './author';
 // We import object and document schemas
 import blockContent from './blockContent';
 import category from './category';
+import locations from './locations';
 import post from './post';
 import products from './products';
 
@@ -22,6 +23,7 @@ export default createSchema({
 		author,
 		category,
 		products,
+		locations,
 		// When added to this list, object types can be used as
 		// { type: 'typename' } in other document schemas
 		blockContent,
