@@ -1,19 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/Beltone_Logo_Web.png';
-import styles from './Navbar.module.css';
+import logo from '../../assets/logo-negative-white.png';
 
 const Navbar = ({ toggle, navLinks }) => {
 	return (
 		<nav
-			className="sticky xl:px-44 lg:px-32 top-0 z-50 flex justify-between items-center h-16 relative shadow-sm bg-white beltoneBlue"
+			className="sticky xl:px-32 lg:px-16 top-0 z-50 flex justify-between items-center h-16 relative shadow-sm bg-beltoneBlue-500 text-white"
 			role="navigation"
 		>
-			<Link className={`pl-8 ${styles.logo}`} to="/">
+			<Link className={`ml-8 lg:w-1/6 w-1/5 hover:cursor-pointer`} to="/">
 				<img
 					src={logo}
 					alt="Beltone Logo"
-					// className={styles.logo}
+					className=""
 					// onClick={(e) => handleLogoClick(e)}
 				/>
 			</Link>
@@ -35,7 +34,15 @@ const Navbar = ({ toggle, navLinks }) => {
 			</div>
 			<div className="pr-8 md:block hidden">
 				{navLinks.map((link) => (
-					<Link className="p-3" to={link.path} key={link.name}>
+					<Link
+						className={
+							link.name === 'Schedule Appointment!'
+								? 'bg-beltoneOrange-500 text-white rounded p-3 mx-1'
+								: `p-3 hover:bg-white rounded hover:text-beltoneBlue-500 mx-1`
+						}
+						to={link.path}
+						key={link.name}
+					>
 						{link.name}
 					</Link>
 				))}
