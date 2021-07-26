@@ -6,13 +6,21 @@ const Dropdown = ({ navLinks, isOpen, toggle }) => {
 		<div
 			className={
 				isOpen
-					? `sticky top-16 z-50 grid grid-rows-4 text-center items-center bg-white beltoneBlue`
+					? `sticky top-16 z-50 grid grid-rows-4 text-center items-center bg-beltoneClearBlue-500 text-white`
 					: 'hidden'
 			}
 			onClick={toggle}
 		>
 			{navLinks.map((link) => (
-				<Link className="p-3" to={link.path} key={link.name}>
+				<Link
+					className={
+						link.name === 'Schedule Appointment!'
+							? 'bg-beltoneOrange-500 text-white p-3'
+							: `p-3`
+					}
+					to={link.path}
+					key={link.name}
+				>
 					{link.name}
 				</Link>
 			))}
