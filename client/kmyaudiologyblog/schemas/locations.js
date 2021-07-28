@@ -51,7 +51,6 @@ export default {
 			name: 'fax',
 			title: 'Business Fax',
 			type: 'string',
-			validation: (Rule) => Rule.required().error('Cannot be empty'),
 		},
 		{
 			name: 'social',
@@ -69,4 +68,10 @@ export default {
 			},
 		},
 	],
+	preview: {
+		select: {
+			title: 'city',
+			media: 'image',
+		},
+	},
 };
