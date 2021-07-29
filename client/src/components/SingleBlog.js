@@ -39,7 +39,7 @@ const SingleBlog = () => {
 	return (
 		<main className="container mx-auto text-center my-6">
 			<div className="p-10">
-				<section className="container mx-auto flex flex-wrap justify-center items-start text-beltone-800">
+				<section className="container mx-auto flex flex-wrap justify-center items-start text-beltoneBlue-800">
 					<div className="lg:w-3/4 w-full lg:pr-3">
 						<div>
 							<h1 className="text-5xl font-bold">{blog.title}</h1>

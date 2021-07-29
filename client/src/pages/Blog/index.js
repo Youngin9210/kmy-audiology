@@ -36,7 +36,7 @@ const Blog = () => {
 	return (
 		<main className="min-h-screen p-12">
 			<section className="container mx-auto text-center">
-				<h1 className="text-6xl text-beltone-800 font-bold">Blog</h1>
+				<h1 className="text-6xl text-beltoneBlue-800 font-bold">Blog</h1>
 				<div className="flex flex-wrap justify-center items-start my-16 gap-8">
 					{blogData &&
 						blogData.map((blog, index) => {
